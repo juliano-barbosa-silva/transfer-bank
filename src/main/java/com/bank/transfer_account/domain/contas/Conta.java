@@ -7,15 +7,16 @@ import java.util.UUID;
 
 public class Conta {
 
-    private UUID idConta;
+    private String idConta;
     private String agencia;
     private String numero;
     private TipoContaEnum tipo;  // CONTA_CORRENTE, CONTA_PJ
     private BigDecimal saldo = BigDecimal.ZERO;
-    private UUID idCliente;
+    private String idCliente;
     private boolean ativa = true;
 
-    public Conta(UUID idConta, String agencia, String numero, TipoContaEnum tipo, BigDecimal saldo, UUID idCliente, boolean ativa) {
+    public Conta(String idConta, String agencia, String numero, TipoContaEnum tipo, BigDecimal saldo,
+                 String idCliente, boolean ativa) {
         this.idConta = idConta;
         this.agencia = agencia;
         this.numero = numero;
@@ -25,11 +26,11 @@ public class Conta {
         this.ativa = ativa;
     }
 
-    public UUID getIdConta() {
+    public String getIdConta() {
         return idConta;
     }
 
-    public void setIdConta(UUID idConta) {
+    public void setIdConta(String idConta) {
         this.idConta = idConta;
     }
 
@@ -65,11 +66,11 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public UUID getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(UUID idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 

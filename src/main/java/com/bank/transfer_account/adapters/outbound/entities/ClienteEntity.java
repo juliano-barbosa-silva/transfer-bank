@@ -12,7 +12,7 @@ public class ClienteEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idCliente;
+    private String idCliente;
 
     @NotBlank(message = "Nome é obrigatório")
     @Column(name = "nome", nullable = false, length = 100)
@@ -30,18 +30,18 @@ public class ClienteEntity {
     @Column(name = "criado_em", nullable = false, updatable = false)
     private LocalDateTime criadoEm = LocalDateTime.now();
 
-    public ClienteEntity(UUID idCliente, String nome, String tipoPessoa, boolean ativo) {
+    public ClienteEntity(String idCliente, String nome, String tipoPessoa, boolean ativo) {
         this.idCliente = idCliente;
         this.nome = nome;
         this.tipoPessoa = tipoPessoa;
         this.ativo = ativo;
     }
 
-    public UUID getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(UUID idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 

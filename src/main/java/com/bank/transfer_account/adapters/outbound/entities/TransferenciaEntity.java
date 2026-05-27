@@ -15,7 +15,7 @@ public class TransferenciaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idTransferencia;
+    private String idTransferencia;
 
     @NotNull
     @JoinColumn(name = "conta_origem_id", nullable = false)
@@ -45,11 +45,11 @@ public class TransferenciaEntity {
         this.status = status;
     }
 
-    public UUID getIdTransferencia() {
+    public String getIdTransferencia() {
         return idTransferencia;
     }
 
-    public void setIdTransferencia(UUID idTransferencia) {
+    public void setIdTransferencia(String idTransferencia) {
         this.idTransferencia = idTransferencia;
     }
 

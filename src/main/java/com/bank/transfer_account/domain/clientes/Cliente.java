@@ -7,12 +7,13 @@ public class Cliente {
     private String idCliente;
     private String nome;
     private String tipoPessoa;  // // grava "F" (fisica) ou "J" (juridica) via converter
-    private boolean ativo = true;
+    private boolean ativo;
 
-    public Cliente(String idCliente, String nome, String tipoPessoa) {
+    public Cliente(String idCliente, String nome, String tipoPessoa, boolean ativo) {
         this.idCliente = idCliente;
         this.nome = nome;
         this.tipoPessoa = tipoPessoa;
+        this.ativo = ativo;
     }
 
     public String getIdCliente() {

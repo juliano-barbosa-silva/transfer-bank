@@ -9,13 +9,11 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "contas")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
 public abstract class ContaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idConta;
+    private String idConta;
 
     @NotNull
     @Column(name = "agencia", nullable = false, length = 4)
@@ -36,12 +34,13 @@ public abstract class ContaEntity {
 
     @OneToOne
     @JoinColumn(name = "cliente_id", nullable = false, unique = true)
-    private UUID idCliente;
+    private String idCliente;
 
     @Column(name = "ativa", nullable = false)
     private boolean ativa = true;
 
-    public ContaEntity(UUID idConta, String agencia, String numero, TipoContaEnum tipo, BigDecimal saldo, UUID idCliente, boolean ativa) {
+    public ContaEntity(String idConta, String agencia, String numero, TipoContaEnum tipo, BigDecimal saldo,
+                       String idCliente, boolean ativa) {
         this.idConta = idConta;
         this.agencia = agencia;
         this.numero = numero;
@@ -51,11 +50,11 @@ public abstract class ContaEntity {
         this.ativa = ativa;
     }
 
-    public UUID getIdConta() {
+    public String getIdConta() {
         return idConta;
     }
 
-    public void setIdConta(UUID idConta) {
+    public void setIdConta(String idConta) {
         this.idConta = idConta;
     }
 
@@ -87,11 +86,11 @@ public abstract class ContaEntity {
         return saldo;
     }
 
-    public UUID getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(UUID idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
