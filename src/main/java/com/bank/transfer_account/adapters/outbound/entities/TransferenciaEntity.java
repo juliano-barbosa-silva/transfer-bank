@@ -15,7 +15,7 @@ public class TransferenciaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String idTransferencia;
+    private String id;
 
     @NotNull
     @JoinColumn(name = "conta_origem_id", nullable = false)
@@ -37,20 +37,22 @@ public class TransferenciaEntity {
     @Column(name = "realizada_em", nullable = false)
     private LocalDateTime realizadaEm = LocalDateTime.now();
 
-    public TransferenciaEntity(String contaOrigemId, String contaDestinoId, BigDecimal valor,
-                               StatusTransferenciaEnum status) {
+    public TransferenciaEntity(String id, String contaOrigemId, String contaDestinoId,
+                               BigDecimal valor, StatusTransferenciaEnum status, LocalDateTime realizadaEm) {
+        this.id = id;
         this.contaOrigemId = contaOrigemId;
         this.contaDestinoId = contaDestinoId;
         this.valor = valor;
         this.status = status;
+        this.realizadaEm = realizadaEm;
     }
 
-    public String getIdTransferencia() {
-        return idTransferencia;
+    public String getId() {
+        return id;
     }
 
-    public void setIdTransferencia(String idTransferencia) {
-        this.idTransferencia = idTransferencia;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getContaOrigemId() {

@@ -13,7 +13,7 @@ public class Conta {
     private TipoContaEnum tipo;  // CONTA_CORRENTE, CONTA_PJ
     private BigDecimal saldo = BigDecimal.ZERO;
     private String idCliente;
-    private boolean ativa = true;
+    private boolean ativa;
 
     public Conta(String idConta, String agencia, String numero, TipoContaEnum tipo, BigDecimal saldo,
                  String idCliente, boolean ativa) {

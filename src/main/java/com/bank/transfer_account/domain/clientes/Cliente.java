@@ -1,7 +1,5 @@
 package com.bank.transfer_account.domain.clientes;
 
-import java.util.UUID;
-
 public class Cliente {
 
     private String idCliente;

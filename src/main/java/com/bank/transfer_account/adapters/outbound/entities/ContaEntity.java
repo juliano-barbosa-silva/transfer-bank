@@ -13,7 +13,7 @@ public abstract class ContaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String idConta;
+    private String id;
 
     @NotNull
     @Column(name = "agencia", nullable = false, length = 4)
@@ -39,9 +39,9 @@ public abstract class ContaEntity {
     @Column(name = "ativa", nullable = false)
     private boolean ativa = true;
 
-    public ContaEntity(String idConta, String agencia, String numero, TipoContaEnum tipo, BigDecimal saldo,
+    public ContaEntity(String id, String agencia, String numero, TipoContaEnum tipo, BigDecimal saldo,
                        String idCliente, boolean ativa) {
-        this.idConta = idConta;
+        this.id = id;
         this.agencia = agencia;
         this.numero = numero;
         this.tipo = tipo;
@@ -50,12 +50,12 @@ public abstract class ContaEntity {
         this.ativa = ativa;
     }
 
-    public String getIdConta() {
-        return idConta;
+    public String getId() {
+        return id;
     }
 
-    public void setIdConta(String idConta) {
-        this.idConta = idConta;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getAgencia() {
