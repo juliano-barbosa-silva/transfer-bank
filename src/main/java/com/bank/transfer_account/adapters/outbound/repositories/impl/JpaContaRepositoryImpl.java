@@ -3,9 +3,11 @@ package com.bank.transfer_account.adapters.outbound.repositories.impl;
 import com.bank.transfer_account.adapters.outbound.repositories.JpaContaRepository;
 import com.bank.transfer_account.domain.contas.Conta;
 import com.bank.transfer_account.domain.contas.ContaRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class JpaContaRepositoryImpl implements ContaRepository {
 
     private final JpaContaRepository jpaContaRepository;

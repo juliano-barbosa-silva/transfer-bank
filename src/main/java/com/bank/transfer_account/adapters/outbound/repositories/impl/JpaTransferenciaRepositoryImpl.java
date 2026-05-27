@@ -3,9 +3,11 @@ package com.bank.transfer_account.adapters.outbound.repositories.impl;
 import com.bank.transfer_account.adapters.outbound.repositories.JpaTransferenciaRepository;
 import com.bank.transfer_account.domain.transferencias.Transferencia;
 import com.bank.transfer_account.domain.transferencias.TransferenciaRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class JpaTransferenciaRepositoryImpl implements TransferenciaRepository {
 
     private final JpaTransferenciaRepository jpaTransferenciaRepository;

@@ -32,21 +32,21 @@ public abstract class ContaEntity {
     @Column(name = "saldo", nullable = false, precision = 19, scale = 2)
     private BigDecimal saldo = BigDecimal.ZERO;
 
-    @OneToOne
+    @NotNull
     @JoinColumn(name = "cliente_id", nullable = false, unique = true)
-    private String idCliente;
+    private String clienteId;
 
     @Column(name = "ativa", nullable = false)
     private boolean ativa = true;
 
     public ContaEntity(String id, String agencia, String numero, TipoContaEnum tipo, BigDecimal saldo,
-                       String idCliente, boolean ativa) {
+                       String clienteId, boolean ativa) {
         this.id = id;
         this.agencia = agencia;
         this.numero = numero;
         this.tipo = tipo;
         this.saldo = saldo;
-        this.idCliente = idCliente;
+        this.clienteId = clienteId;
         this.ativa = ativa;
     }
 
@@ -86,12 +86,12 @@ public abstract class ContaEntity {
         return saldo;
     }
 
-    public String getIdCliente() {
-        return idCliente;
+    public String getclienteId() {
+        return clienteId;
     }
 
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
+    public void setclienteId(String clienteId) {
+        this.clienteId = clienteId;
     }
 
     public boolean isAtiva() {
